@@ -23,6 +23,15 @@ public class BeerController {
         return new ResponseEntity<>(beerService.getBeerById(beerID), HttpStatus.OK);
     }
 
+    @PostMapping //POST- create new beer
+    public ResponseEntity handlePost(BeerDto beerDto){
+        BeerDto savedDto = beerService.saveNewBeer(beerDto);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Location", "/api/v1/beer/"+ savedDto.getId().toString());
+        return new ResponseEntity(headers, HttpStatus.CREATED);
+    }
+
 
 
 }
