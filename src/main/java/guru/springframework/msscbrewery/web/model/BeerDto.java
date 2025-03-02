@@ -15,16 +15,16 @@ import java.util.UUID;
 @Builder
 
 public class BeerDto {
-    @Null
+    @Null(message = "Id should not be null")
     private UUID id;
 
-    @NotBlank
+    @NotBlank(message = "Beer Name is required")
     private String beerName;
 
-    @NotBlank
+    @NotBlank(message = "Beer Style is required")
     private String beerStyle;
 
-    @Positive
+    @Positive (message = "UPC should be a positive number")
     private Long upc;
 
 
