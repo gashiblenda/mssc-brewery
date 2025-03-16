@@ -2,7 +2,6 @@ package guru.springframework.msscbrewery.web.model;
 
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 public class BeerDtoTest {
     public static void main(String[] args) {
